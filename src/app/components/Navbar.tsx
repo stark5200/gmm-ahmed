@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className='fixed left-0 top-0 w-full z-10 ease-in duration-300'
+      className='fixed left-0 top-0 w-full z-20 ease-in duration-300'
     >
       <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
         <Link href='/'>
@@ -52,6 +52,9 @@ const Navbar = () => {
           </li>
           <li className='p-4 font-verdana'>
             <Link href='/contact'>CONTACT</Link>
+          </li>
+          <li className='p-4 font-verdana'>
+            <Link href='/location'>LOCATION</Link>
           </li>
         </ul>
 

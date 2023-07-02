@@ -30,3 +30,8 @@ body {
 {
   background-image: url('https://greenmarmot.com/images/capsules/double_capsule1.jpg');
 }
+
+.map-container {
+  width: 80%;
+  height: 80vh;
+}
