@@ -14,6 +14,11 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        marmotgreen: {
+          DEFAULT: '#007b45'
+        }
+      }
     },
   },
   plugins: [require("daisyui") , require("tw-elements/dist/plugin.cjs") , ('flowbite/plugin')],
