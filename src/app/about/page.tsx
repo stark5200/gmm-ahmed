@@ -614,11 +614,11 @@ const page = () => {
                   Why Choose Us
                 </span>
                 <p className="mb-8 text-base text-body-color">
-                In many city centres around the world it is becoming increasingly difficult for travellers to find moderately priced, eco-friendly and cosy accommodation. Zurich, one of Europe’s most attractive cities, is no exception.
+                  In many city centres around the world it is becoming increasingly difficult for travellers to find moderately priced, eco-friendly and cosy accommodation. Zurich, one of Europe’s most attractive cities, is no exception.
 
-Now Green Marmot, the first capsule hotel in the heart of Zurich, has created the ideal solution to this problem. Based on a pioneering idea from Japan, Green Marmot offers guests the ideal place to rest their heads in one of the city’s best locations.
+                  Now Green Marmot, the first capsule hotel in the heart of Zurich, has created the ideal solution to this problem. Based on a pioneering idea from Japan, Green Marmot offers guests the ideal place to rest their heads in one of the city’s best locations.
 
-Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you
+                  Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you
                 </p>
                 <a
                   href="/#"
