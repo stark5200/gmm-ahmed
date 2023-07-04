@@ -20,7 +20,7 @@ function Map() {
   const center = useMemo( () => ({lat:47.36911, lng:8.54429}), []);
   
   return (
-    <GoogleMap zoom={15} center={center} mapContainerClassName="map-container">
+    <GoogleMap zoom={15} center={center} mapContainerClassName="map-container" >
       <Marker 
         position={center} 
         label={'Green Marmot Capsule Hotel Zürich'}>
