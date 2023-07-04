@@ -8,7 +8,7 @@ function Footer() {
         <p className="font-bold text-accent">
           Green Marmot. <br />
         </p>
-        <a href={`tel: +1234567983`}>tel :+1234567983</a>
+        <a href={`tel: +41 44 500 76 80`}>Tel +41 44 500 76 80</a>
         <p>info@greenmarmot.com</p>
         <p className="text-accent">Copyright © 2023 - All right reserved</p>
       </div>

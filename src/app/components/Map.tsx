@@ -8,6 +8,7 @@ export default function Home() {
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`, 
+    libraries: ["places"],
   });
 
   if(!isLoaded) return <Loading>Loading</Loading>;
@@ -16,9 +17,15 @@ export default function Home() {
 }
 
 function Map() {
-  const center = useMemo( () => ({lat:47.369222464373024, lng:8.54432982564593}), []);
+  const center = useMemo( () => ({lat:47.36911, lng:8.54429}), []);
+  
   return (
     <GoogleMap zoom={15} center={center} mapContainerClassName="map-container">
-      <Marker position={center}></Marker>
+      <Marker 
+        position={center} 
+        label={'Green Marmot Capsule Hotel Zürich'}>
+      </Marker >
     </GoogleMap>)
 }
+
+//icon={<img src="./pictures/double_capsule1" alt="" className="rounded-2xl" width={50} height={50}/>}
