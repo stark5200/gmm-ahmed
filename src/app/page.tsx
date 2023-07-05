@@ -4,7 +4,7 @@ import Carousels from './components/Carousels';
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-white">
       <Hero />
       <Carousels />
     </div>
