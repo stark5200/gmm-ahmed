@@ -1,36 +1,31 @@
 import React from 'react'
+import CustomImage from '../components/CustomImage'
 
 const page = () => {
   return (
     <>
-    <section className="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-accent">
-        <div className="container">
-          <div className="flex flex-wrap items-center justify-between -mx-4">
+    <section className="pt-10 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-accent">
+      
+        <div className="container pt-10">
+        
+        <h2 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-dark sm:text-4xl text-center lg:text-left">
+            About Us
+          </h2>
+          
+          <div className="flex flex-wrap items-center justify-between mx-4">
             <div className="w-full px-4 lg:w-6/12">
               <div className="flex items-center p-6 -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
-                    <img
-                      src="https://greenmarmot.com/images/capsules/62_Kapselhotel.jpg"
-                      alt=""
-                      className="w-full rounded-2xl"
-                    />
+                    <CustomImage source={"https://greenmarmot.com/images/capsules/62_Kapselhotel.jpg"}/>
                   </div>
                   <div className="py-3 sm:py-4">
-                    <img
-                      src="https://greenmarmot.com/images/capsules/13_Kapselhotel.jpg"
-                      alt=""
-                      className="w-full rounded-2xl"
-                    />
+                    <CustomImage source={"https://greenmarmot.com/images/capsules/13_Kapselhotel.jpg"}/>
                   </div>
                 </div>
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="relative z-10 my-4">
-                    <img
-                      src="https://greenmarmot.com/images/capsules/14_Kapselhotel.jpg"
-                      alt=""
-                      className="w-full rounded-2xl"
-                    />
+                    <CustomImage source={"https://greenmarmot.com/images/capsules/14_Kapselhotel.jpg"} />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
                       <svg
                         width={134}
@@ -613,12 +608,12 @@ const page = () => {
                 <span className="block mb-2 text-lg font-semibold text-accent">
                   Why Choose Us
                 </span>
-                <p className="mb-8 text-base text-body-color">
-                  In many city centres around the world it is becoming increasingly difficult for travellers to find moderately priced, eco-friendly and cosy accommodation. Zurich, one of Europe’s most attractive cities, is no exception.
+                <p className="mb-8 pt-10 text-xl font-bold leading-8 text-body-color text-center lg:text-left">
+                  In many city centres around the world it is becoming increasingly difficult for travellers to find moderately priced, eco-friendly and cosy accommodation. Zurich, one of Europe’s most attractive cities, is no exception. <br /> <br />
 
-                  Now Green Marmot, the first capsule hotel in the heart of Zurich, has created the ideal solution to this problem. Based on a pioneering idea from Japan, Green Marmot offers guests the ideal place to rest their heads in one of the city’s best locations.
+                  Now Green Marmot, the first capsule hotel in the heart of Zurich, has created the ideal solution to this problem. Based on a pioneering idea from Japan, Green Marmot offers guests the ideal place to rest their heads in one of the city’s best locations. <br /> <br />
 
-                  Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you
+                  Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you <br /> <br />
                 </p>
                 <a
                   href="/#"

@@ -1,6 +1,10 @@
 import Image from "next/image";
-function CustomImage(source: string ) {
 
+type PrivateProp = {
+  source: string
+}
+
+const CustomImage = ({source}: PrivateProp) => {
   return (
     <div className="">
       <Image
@@ -8,7 +12,7 @@ function CustomImage(source: string ) {
         alt=""
         width={150}
         height={150}
-        className="w-full rounded-xl border-4 border-slate-700 m-5"
+        className="w-full rounded-xl border-2 border-slate-700 m-1"
       />
     </div>
   )
