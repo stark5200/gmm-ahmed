@@ -1,24 +1,24 @@
 import Image from "next/image";
+// hi
 function Footer() {
 
   return (
-    <footer className="footer footer-center p-10 bg-white text-accent-content">
+    <footer className="footer footer-center p-10 bg-slate-800 text-accent-content">
       <div className="text-accent">
         <Image alt="Green Marmot logo" src="/corporateDesign/LOGO_plain.png" width={64} height={64}></Image>
         <p className="font-bold text-accent">
           Green Marmot. <br />
         </p>
+        <p className="text-accent">Copyright © 2023 - All right reserved</p>
       </div>
-      <div className="flex justify-between">
-        <div className="">
+      <div className=" grid grid-cols-2">
+        <div className="text-right align-right">
           <p className="text-accent">Schifflände 26</p>
-          <p className="text-accent">8001 Zürich</p>
-          <p className="text-accent">Switzerland</p>
+          <p className="text-accent">8001 Zürich Switzerland</p>
         </div>
-        <div className="text-accent">
+        <div className="text-accent text-left align-left">
           <a href={`tel: +41 44 500 76 80`}>Tel +41 44 500 76 80</a>
           <p>info@greenmarmot.com</p>
-          <p className="text-accent">Copyright © 2023 - All right reserved</p>
         </div>
       </div>
       <div>
