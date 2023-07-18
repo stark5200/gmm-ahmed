@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
         <Link href='/'>
-          <h1  className='text-white text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-accent'>
+          <h1  style={{ color: `${textColor}` }} className='text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-accent'>
             GREEN MARMOT
           </h1>
         </Link>

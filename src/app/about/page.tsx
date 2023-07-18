@@ -7,11 +7,7 @@ const page = () => {
     <section className="pt-10 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-accent">
       
         <div className="container pt-10">
-        
-        <h2 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-dark sm:text-4xl text-center lg:text-left">
-            About Us
-          </h2>
-          
+  
           <div className="flex flex-wrap items-center justify-between mx-4">
             <div className="w-full px-4 lg:w-6/12">
               <div className="flex items-center p-6 -mx-3 sm:-mx-4">
@@ -602,10 +598,13 @@ const page = () => {
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="mt-10 lg:mt-0">
-                <h2 className="mb-8 text-3xl font-bold text-dark sm:text-4xl">
-                Welcome to the first capsule hotel in the heart of Zurich!
+                <h1 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-dark sm:text-5xl lg:text-left">
+                  About Us
+                </h1>
+                <h2 className="mb-8 text-2xl font-bold text-dark sm:text-4xl">
+                  Welcome to the first capsule hotel in the heart of Zurich!
                 </h2>
-                <span className="block mb-2 text-lg font-semibold text-accent">
+                <span className="block mb-2 text-lg font-semibold">
                   Why Choose Us
                 </span>
                 <p className="mb-8 pt-10 text-xl font-bold leading-8 text-body-color text-center lg:text-left">
