@@ -1,27 +1,36 @@
 import React from 'react'
-import CustomImage from '../components/CustomImage'
 
 const page = () => {
   return (
     <>
-    <section className="pt-10 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-emerald-50">
-      
-        <div className="container pt-10">
-  
-          <div className="flex flex-wrap items-center justify-between mx-4">
+    <section className="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-accent">
+        <div className="container">
+          <div className="flex flex-wrap justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
               <div className="flex items-center p-6 -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
-                    <CustomImage source={"https://greenmarmot.com/images/capsules/62_Kapselhotel.jpg"}/>
+                    <img
+                      src="https://greenmarmot.com/images/capsules/62_Kapselhotel.jpg"
+                      alt=""
+                      className="w-full rounded-2xl"
+                    />
                   </div>
                   <div className="py-3 sm:py-4">
-                    <CustomImage source={"https://greenmarmot.com/images/capsules/13_Kapselhotel.jpg"}/>
+                    <img
+                      src="https://greenmarmot.com/images/capsules/13_Kapselhotel.jpg"
+                      alt=""
+                      className="w-full rounded-2xl"
+                    />
                   </div>
                 </div>
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="relative z-10 my-4">
-                    <CustomImage source={"https://greenmarmot.com/images/capsules/14_Kapselhotel.jpg"} />
+                    <img
+                      src="https://greenmarmot.com/images/capsules/14_Kapselhotel.jpg"
+                      alt=""
+                      className="w-full rounded-2xl"
+                    />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
                       <svg
                         width={134}
@@ -598,25 +607,29 @@ const page = () => {
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="mt-10 lg:mt-0">
-                <h1 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-emerald-600 sm:text-5xl lg:text-left">
-                  About Us
-                </h1>
-                <h2 className="mb-8 text-2xl font-bold text-emerald-600 sm:text-4xl">
-                  Welcome to the first capsule hotel in the heart of Zurich!
+                <h2 className="mb-8 text-3xl font-bold text-dark sm:text-4xl">
+                  Capsules
                 </h2>
-                <span className="block mb-2 text-lg font-semibold">
-                  Why Choose Us
-                </span>
-                <p className="mb-8 pt-10 text-xl font-bold leading-8 text-emerald-600 text-center lg:text-left">
-                  In many city centres around the world it is becoming increasingly difficult for travellers to find moderately priced, eco-friendly and cosy accommodation. Zurich, one of Europe’s most attractive cities, is no exception. <br /> <br />
+                <p className="mb-8 text-base text-body-color">
+                  Capsules are the new and smart way to sleep in a city. Based on a pioneering idea from Japan, they are the eco-friendly answer to overcrowded, expensive city centres. <br /> <br />
 
-                  Now Green Marmot, the first capsule hotel in the heart of Zurich, has created the ideal solution to this problem. Based on a pioneering idea from Japan, Green Marmot offers guests the ideal place to rest their heads in one of the city’s best locations. <br /> <br />
+                  Climb in to your own cosy and private capsule, snuggle down under sheets made of finest organic Egyptian cotton, on modern, thick mattresses. Sleep deeply and comfortably just like a marmot in his den. <br /> <br />
 
-                  Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you <br /> <br />
+                  The hotel offers both single and double bed capsules. The singles measure 212cm x 111cm x 109cm (length/ width/ height) and the doubles 212cm x 179cm x 109cm. They are all built of eco-friendly natural wood. The bedding in the capsules is of the highest quality.<br /> <br />
+
+                  All capsules have fast Wi-Fi, lighting, a mirror, a folding table and are air-conditioned. There are three separate areas: one for women, one for men and a shared area for doubles or groups. Capsules for people with special needs are also available.<br /> <br />
+
+                  The capsule hotel concept is the answer for the modern, green traveller on a low to moderate budget. Guests are in the very centre of the city, with easy, immediate access to all the sights, restaurants, nightlife and culture that Zurich has to offer.<br /> <br />
+
+                  At the same time, by sleeping overnight in the comfortable capsules, guests pay less than in a regular hotel and are sure that they are reducing their carbon footprint.<br /> <br />
+
+                  There are spacious, modern, women’s and men’s bathrooms with modern showers and amenities and guests can store their belongings in central, easily accessible lockers in the hotel.<br /> <br />
+
+                  As the hotel is surrounded by bars, restaurants and cafés there are none in the hotel itself. Just step outside and take your pick of all that Zurich has to offer.<br /> <br />
                 </p>
                 <a
                   href="/#"
-                  className="inline-flex items-center justify-center px-10 py-4 text-base font-normal text-center text-emerald-600 rounded-lg bg-emerald-50 hover:bg-opacity-90 lg:px-8 xl:px-10"
+                  className="inline-flex items-center justify-center px-10 py-4 text-base font-normal text-center text-white rounded-lg bg-accent hover:bg-opacity-90 lg:px-8 xl:px-10"
                 >
                   Book Now
                 </a>
@@ -630,3 +643,4 @@ const page = () => {
 }
 
 export default page
+

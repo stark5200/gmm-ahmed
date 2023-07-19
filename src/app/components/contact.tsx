@@ -1,7 +1,7 @@
 function ContactForm() {
   
     return (
-      <div className="bg-slate-700 rounded-xl p-5">
+      <div className="bg-slate-600 rounded-xl p-5">
         <form className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -36,7 +36,7 @@ function ContactForm() {
           </div>
           <div className="md:flex md:items-center">
             <div className="md:w-1/3">
-              <button className="shadow bg-accent hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+              <button className="shadow bg-emerald-600 hover:bg-emerald-500 focus:shadow-outline focus:outline-none text-emerald-50 font-bold py-2 px-4 rounded" type="button">
                 Send
               </button>
             </div>

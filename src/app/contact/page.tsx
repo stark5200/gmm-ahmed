@@ -4,7 +4,7 @@ import ContactForm from '../components/contact'
 const page = () => {
   return (
  <>
-  <section className="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-accent">
+  <section className="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-emerald-50">
         <div className="container">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
