@@ -1,4 +1,5 @@
 import Image from "next/image";
+let thisYear = new Date().getFullYear()
 // hi
 function Footer() {
 
@@ -9,7 +10,7 @@ function Footer() {
         <p className="font-bold text-emerald-600">
           Green Marmot. <br />
         </p>
-        <p className="text-emerald-600">Copyright © 2023 - All right reserved</p>
+        <p className="text-emerald-600">Copyright © {`${thisYear}`} - All right reserved</p>
       </div>
       <div className=" grid grid-cols-2">
         <div className="text-right align-right">
