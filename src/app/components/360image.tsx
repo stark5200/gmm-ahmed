@@ -9,13 +9,7 @@ type PrivateProp = {
 const CustomImage = ({source}: PrivateProp) => {
   return (
     <div className="">
-      <Image
-        src={source}
-        alt=""
-        width={150}
-        height={150}
-        className="w-full rounded-xl border-2 border-slate-700 m-0"
-      />
+      //360 image goes here
     </div>
   )
 }
