@@ -1,7 +1,9 @@
-import React from 'react'
+import React , { useRef } from 'react'
+import ReactPlayer from "react-player";
 import Image from 'next/image'
 import CustomImage from '../components/CustomImage'
-import Carousels from '../components/Carousels';
+import Carousels from '../components/Carousels'
+const VIDEO_PATH = 'https://www.youtube.com/watch?v=IUskDZXw_sw&t=15s&ab_channel=GreenMarmotCapsuleHotel'
 
 const page = () => {
   return (
@@ -34,6 +36,10 @@ There are spacious, modern, women’s and men’s bathrooms with modern showers 
 
 As the hotel is surrounded by bars, restaurants and cafés there are none in the hotel itself. Just step outside and take your pick of all that Zurich has to offer.<br /> <br />
                 </p>
+      </div>
+
+      <div>
+        <ReactPlayer ref={playerRef} url={VIDEO_PATH} controls={true} />
       </div>
 
     </div>
