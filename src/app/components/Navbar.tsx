@@ -88,7 +88,7 @@ const Navbar = () => {
               <Link href='/contact'>CONTACT</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/contact'>More</Link>
+              <Link href='/'>CONTACT</Link>
             </li>
           </ul>
         </div>
