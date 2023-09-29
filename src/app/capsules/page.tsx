@@ -10,10 +10,10 @@ const VIDEO_PATH = 'https://www.youtube.com/watch?v=IUskDZXw_sw&t=15s&ab_channel
 const page = () => {
   const playerRef = useRef(null);
   return (
-    <div className="bg-emerald-50 p-10">
-      <div className="bg-emerald-50 p-10">
+    <section className="pt-30 lg:pt-[120px] pb-20 lg:pb-[90px] overflow-hidden bg-emerald-50 flex items-center justify-center">
+      <div className="max-w-6xl p-10">
 
-        <h2 className="mb-10 mt-10 lg:ml-5 text-4xl font-bold text-emerald-600 sm:text-4xl text-center lg:text-left">
+        <h2 className="mb-8 mt-10 text-4xl font-bold text-emerald-600 sm:text-4xl text-center lg:text-left">
           Capsules
         </h2>
 
@@ -41,13 +41,15 @@ There are spacious, modern, women’s and men’s bathrooms with modern showers 
 
 As the hotel is surrounded by bars, restaurants and cafés there are none in the hotel itself. Just step outside and take your pick of all that Zurich has to offer.<br /> <br />
                 </p>
-      </div>
 
-      <div className='flex justify-center pb-12 rounded-2xl'>
+                <div className='flex justify-center pb-12 rounded-2xl'>
         <ReactPlayer ref={playerRef} url={VIDEO_PATH} controls={true} />
       </div>
+      </div>
 
-    </div>
+      
+
+    </section>
   )
 }
 

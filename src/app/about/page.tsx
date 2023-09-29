@@ -6,7 +6,7 @@ const page = () => {
     <>
     <section className="pt-10 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-emerald-50">
       
-        <div className="container pt-10">
+        <div className="container pt-10 max-w-6xl mx-auto">
   
           <div className="flex flex-wrap items-center justify-between mx-4">
             <div className="w-full px-4 lg:w-6/12">

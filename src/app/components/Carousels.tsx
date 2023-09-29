@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Carousels = () => {
   return (
     <div className='bg-transparent'>
-    <div className="container mx-auto ">
+    <div className="container  mx-auto ">
       <div className="grid-cols-3 p-20 space-y-2 lg:space-y-0 lg:grid lg:gap-3 lg:grid-rows-3">
         <div className="w-full rounded">
           <Image src={"/pictures/2_Kapselhotel.jpg"}
