@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer footer-center p-10 bg-slate-800 text-emerald-600">
       <div className="text-emerald-600">
-        <Image alt="Green Marmot logo" src="/corporateDesign/LOGO_plain.png" width={64} height={64}></Image>
+        <Image alt="Green Marmot logo" src="/corporateDesign/LOGO_plain.png" width={128} height={128}></Image>
         <p className="font-bold text-emerald-600">
           Green Marmot. <br />
         </p>
