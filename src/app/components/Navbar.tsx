@@ -41,7 +41,7 @@ const Navbar = () => {
           </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
-          <li className='p-4 font-verdana'>
+          <li className='p-4 font-verdana hover:bg-gradient-to-r from-white to-accent'>
             <Link href='/'>HOME</Link>
           </li>
           <li className='p-4 font-verdana'>

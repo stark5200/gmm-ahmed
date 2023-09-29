@@ -15,9 +15,9 @@ const page = () => {
             
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="mt-10 lg:mt-0">
-                <h1 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-emerald-600 sm:text-5xl lg:text-left">
+                <h2 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-emerald-600 sm:text-5xl lg:text-left">
                   About Us
-                </h1>
+                </h2>
                 <h3 className="mb-8 text-2xl font-bold text-emerald-600 sm:text-4xl">
                   Welcome to the first capsule hotel in the heart of Zurich!
                 </h3>
