@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { usePathname } from 'next/navigation';
+import { Button } from '@nextui-org/react';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -41,23 +42,23 @@ const Navbar = () => {
           </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
-          <li className='p-4 font-verdana hover:bg-gradient-to-r from-white to-accent'>
-            <Link href='/'>HOME</Link>
+          <li className='p-4 font-verdana'>
+            <Button size='sm' color='secondary' variant >HOME</Button>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/capsules'>CAPSULES</Link>
+            <Button href='/capsules'>CAPSULES</Button>
           </li>
           <li className='p-4 FONT-verdana'>
-            <Link href='/about'>ABOUT US</Link>
+            <Button href='/about'>ABOUT US</Button>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/contact'>CONTACT</Link>
+            <Button href='/contact'>CONTACT</Button>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/location'>LOCATION</Link>
+            <Button href='/location'>LOCATION</Button>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/threesixty'>360 VIEW</Link>
+            <Button href='/threesixty'>360 VIEW</Button>
           </li>
         </ul>
 
@@ -89,6 +90,9 @@ const Navbar = () => {
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
               <Link href='/contact'>CONTACT</Link>
+            </li>
+            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
+              <Link href='/location'>LOCATION</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
               <Link href='/threesixty'>360 View</Link>
