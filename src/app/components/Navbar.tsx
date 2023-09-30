@@ -2,8 +2,11 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import {  } from 'react-router';
 import { usePathname } from 'next/navigation';
 import { Button } from '@nextui-org/react';
+import Home from '../page';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -29,6 +32,7 @@ const Navbar = () => {
     window.addEventListener('scroll', changeColor);
   }, []);
 
+  const navigate = useNavigate();
 
   return (
     <div
@@ -42,23 +46,23 @@ const Navbar = () => {
           </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
-          <li className='p-4 font-verdana'>
-            <Button size='sm' color='secondary' variant >HOME</Button>
+          <li>
+            <button className='btn btn-ghost p-4 font-verdana' onClick={() => navigate("/")}>HOME</button>
           </li>
-          <li className='p-4 font-verdana'>
-            <Button href='/capsules'>CAPSULES</Button>
+          <li>
+            <button className='btn btn-ghost p-4 font-verdana' onClick={() => navigate("/capsules")}>CAPSULES</button>
           </li>
           <li className='p-4 FONT-verdana'>
-            <Button href='/about'>ABOUT US</Button>
+            <Link href='/about'>ABOUT US</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Button href='/contact'>CONTACT</Button>
+            <Link href='/contact'>CONTACT</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Button href='/location'>LOCATION</Button>
+            <Link href='/location'>LOCATION</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Button href='/threesixty'>360 VIEW</Button>
+            <Link href='/threesixty'>360 VIEW</Link>
           </li>
         </ul>
 
