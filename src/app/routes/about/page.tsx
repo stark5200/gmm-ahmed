@@ -39,8 +39,9 @@ const page = () => {
                 </a>
               </div>
             </div>
-
+            
             <Picsdots />
+            
           </div>
         </div>
       </section>

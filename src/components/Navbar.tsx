@@ -87,19 +87,19 @@ const Navbar = () => {
               <Link href='/'>HOME</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/capsules'>CAPSULES</Link>
+              <Link href='/routes/capsules' as='capsules'>CAPSULES</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/about'>ABOUT US</Link>
+              <Link href='/routes/about' as='capsules'>ABOUT US</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/contact'>CONTACT</Link>
+              <Link href='/routes/contact' as='capsules'>CONTACT</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/location'>LOCATION</Link>
+              <Link href='/routes/location' as='capsules'>LOCATION</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/threesixty'>360 View</Link>
+              <Link href='/routes/threesixty' as='capsules'>360 View</Link>
             </li>
           </ul>
         </div>
