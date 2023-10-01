@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 let thisYear = new Date().getFullYear()
 // hi

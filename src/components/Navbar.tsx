@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -46,23 +47,35 @@ const Navbar = () => {
           </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
-          <li>
-            <button className='btn btn-ghost p-4 font-verdana' >HOME</button>
+          <li> 
+            <Link href='/'>
+              <button className='btn btn-ghost p-4 font-verdana' >HOME</button>
+            </Link>
           </li>
           <li>
-            <button className='btn btn-ghost p-4 font-verdana' >CAPSULES</button>
+            <Link href='/capsules'>
+              <button className='btn btn-ghost p-4 font-verdana' >CAPSULES</button>
+            </Link>
           </li>
-          <li className='p-4 FONT-verdana'>
-            <Link href='/routes/about'>ABOUT US</Link>
+          <li>
+            <Link href='/about'>
+              <button className='btn btn-ghost p-4 font-verdana' >ABOUT US</button>
+            </Link>
           </li>
-          <li className='p-4 font-verdana'>
-            <Link href='/routes/contact'>CONTACT</Link>
+          <li>
+            <Link href='/contact'>
+              <button className='btn btn-ghost p-4 font-verdana' >CONTACT</button>
+            </Link>
           </li>
-          <li className='p-4 font-verdana'>
-            <Link href='/routes/location'>LOCATION</Link>
+          <li>
+            <Link href='/location'>
+              <button className='btn btn-ghost p-4 font-verdana' >LOCATION</button>
+            </Link>
           </li>
-          <li className='p-4 font-verdana'>
-            <Link href='/routes/threesixty'>360 VIEW</Link>
+          <li>
+            <Link href='/threesixty'>
+              <button className='btn btn-ghost p-4 font-verdana' >360 VIEW</button>
+            </Link>
           </li>
         </ul>
 
@@ -87,19 +100,19 @@ const Navbar = () => {
               <Link href='/'>HOME</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/capsules' as='capsules'>CAPSULES</Link>
+              <Link href='/capsules' as='capsules'>CAPSULES</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/about' as='capsules'>ABOUT US</Link>
+              <Link href='/about' as='capsules'>ABOUT US</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/contact' as='capsules'>CONTACT</Link>
+              <Link href='/contact' as='capsules'>CONTACT</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/location' as='capsules'>LOCATION</Link>
+              <Link href='/location' as='capsules'>LOCATION</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/routes/threesixty' as='capsules'>360 View</Link>
+              <Link href='/threesixty' as='capsules'>360 View</Link>
             </li>
           </ul>
         </div>
