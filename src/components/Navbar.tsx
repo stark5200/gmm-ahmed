@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import {  } from 'react-router';
 import { usePathname } from 'next/navigation';
 import { Button } from '@nextui-org/react';
-import Home from '../app/page';
+import Home from '@/app/page';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
     window.addEventListener('scroll', changeColor);
   }, []);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <div
@@ -47,22 +47,22 @@ const Navbar = () => {
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
           <li>
-            <button className='btn btn-ghost p-4 font-verdana' onClick={() => navigate("/")}>HOME</button>
+            <button className='btn btn-ghost p-4 font-verdana' >HOME</button>
           </li>
           <li>
-            <button className='btn btn-ghost p-4 font-verdana' onClick={() => navigate("/capsules")}>CAPSULES</button>
+            <button className='btn btn-ghost p-4 font-verdana' >CAPSULES</button>
           </li>
           <li className='p-4 FONT-verdana'>
-            <Link href='/about'>ABOUT US</Link>
+            <Link href='/routes/about'>ABOUT US</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/contact'>CONTACT</Link>
+            <Link href='/routes/contact'>CONTACT</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/location'>LOCATION</Link>
+            <Link href='/routes/location'>LOCATION</Link>
           </li>
           <li className='p-4 font-verdana'>
-            <Link href='/threesixty'>360 VIEW</Link>
+            <Link href='/routes/threesixty'>360 VIEW</Link>
           </li>
         </ul>
 
@@ -87,19 +87,19 @@ const Navbar = () => {
               <Link href='/'>HOME</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/capsules'>CAPSULES</Link>
+              <Link href='/routes/capsules'>CAPSULES</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/about'>ABOUT US</Link>
+              <Link href='/routes/about'>ABOUT US</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/contact'>CONTACT</Link>
+              <Link href='/routes/contact'>CONTACT</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/location'>LOCATION</Link>
+              <Link href='/routes/location'>LOCATION</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/threesixty'>360 View</Link>
+              <Link href='/routes/threesixty'>360 View</Link>
             </li>
           </ul>
         </div>
