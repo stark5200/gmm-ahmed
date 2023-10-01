@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import {  } from 'react-router';
 import { usePathname } from 'next/navigation';
 import { Button } from '@nextui-org/react';
-import Home from '../page';
+import Home from '../app/page';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
-import CustomImage from '../components/CustomImage'
-import Picsdots from '../components/Picsdots'
+import CustomImage from '@/components/CustomImage'
+import Picsdots from '@/components/Picsdots'
 
 const page = () => {
   return (
