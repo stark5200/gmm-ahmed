@@ -1,0 +1,649 @@
+in this video we're going to talk about react server components and client components when to use reach and common
+0:06
+patterns to interleave them together let's just start from server components now with the introduction of the app
+0:12
+router which is built on top of react server component instead of rendering your whole application on the client
+0:18
+side you can decide if you want to render your components on the server or send some JavaScript to the client and
+0:25
+then run and render your components on the client side therefore you can combine the
+0:30
+interactivity of a client-side application with an improved performance of a traditional server rendered
+0:37
+application now if you look at a page inside of an application
+0:43
+you would notice that most of the parts and segments and components on the page are static there's nothing interactive
+0:50
+about them and they can be entirely rendered on the server using server components now for example here we have
+0:57
+this nav bar up top which is a static component only this search bar on this
+1:04
+side needs client-side interactivity or event listeners to listen to users
+1:09
+interactions same as this sidebar here is entirely maybe rendering some links
+1:15
+for you to navigate to different pages and we have some posts over here or whatever components that they may be and
+1:22
+they only have these buttons that needs interactivity so as you can see we can keep a lot of these components and
+1:29
+JavaScript belonging to these components on the server entirely and then only send their specific or
+1:37
+necessary components that require interactivity to the client side now you
+1:43
+may ask why would you want to use server components and make this complicated with a rendering client components or
+Why server components
+1:50
+react on a client side anyways for the past few years what's up with the server
+1:55
+components well the main reason for using server components is improved performance and that is because of three
+2:02
+reasons first of all you can move your data fetching to your server side therefore you can use the infrastructure
+2:09
+of your server typically your servers are going to be stronger machines with better internet compared to your users
+2:17
+machines or Internet so you can fetch data there plus that
+2:22
+you can be closer to your database so less latency of going back and forth between your server and your database so
+2:30
+improved performance because of the infrastructure and lower latency and the second reason would be that you
+2:36
+can now entirely keep the large dependencies that your app depends on on
+2:42
+the server so any third-party packages that you're using can entirely remain on the server compared to when you use
+2:49
+client-side rendering you'd have to ship all of those packages to the client side which increases your JavaScript bundle
+2:57
+size sent to the client and because of these two reasons with server components your initial page load is going to be
+3:04
+faster because all of the data fetching is happening on the server and the client is just going to get a generated
+3:11
+HTML which is the result of your page and your data together and you're going to also ship less JavaScript to the
+3:17
+client side so react code can be downloaded faster and your site or your page can be interactive faster now all
+3:25
+components inside the app router or react server components by default all of your special files like Pages layouts
+3:32
+loading and error and also all call logs created components that are living inside the app router are going to be
+3:38
+react server components by default now if you need client-side components you can bring them in with the use of use
+3:44
+client directive now client components enable you to add client-side interactivity as I already mentioned and
+3:51
+the way you define them is with the use of use client directive you will put that use client directive up top of any
+3:58
+module or component that you want to turn into a client component and that would create a boundary or Define a
+Client components
+4:05
+boundary between server and client now any other module or component imported
+4:10
+into that file is going to also become a client component that's the reason why
+4:16
+we cannot import a server component into a client component because once you have
+4:22
+that use client directive up top that will Mark the boundary and everything inside of it nested down even
+4:29
+to the children are going to become a client component therefore you won't even need to repeat this use client
+4:36
+further down inside the components that are imported into this client component because once you mark this used client
+4:43
+or the boundary once everything else further down imported into this client component is going to be automatically a
+4:49
+client component now server components are guaranteed to only be rendered on the server and from a react perspective
+4:57
+client components are rendered entirely or primarily on the client side however in next.js we know client components are
+5:04
+also pre-rendered on the server so the HTML is going to be generated on the
+5:09
+server and then the result is going to be hydrated on the client side or become interactive on the client side using
+5:16
+react now when would you use which when would you use a server component versus a
+When to use which
+5:21
+client component rule of thumb is to use server components unless you have a
+5:26
+specific reason to use a client component and what are those specific reasons well if you
+5:32
+wanted to add any interactivity and event listeners such as on click and on change anything that needs to interact
+5:39
+with the user we would use a client component if you want to use react hooks or any custom
+5:45
+hook that depends on react hooks use a state use effect or context you would
+5:51
+use a client component another reason would be anytime that you want to access any browser-specific apis for example
+5:58
+you want to access the window object over the intersection Observer these are only accessible in the browser so you
+6:05
+would need to use a client component to be able to access them and the last reason why you would want or the use
+6:11
+case why you want to use a client component is if you want to use a react class component now you might think that
+6:19
+you barely need to use class components and you might be right the only use case that I can think of
+6:25
+if your legacy application is not actually already written in class
+6:30
+components the only other use case would be error boundaries if you wanted to create your own error boundaries you
+6:37
+still need to use class components because function components or
+6:43
+functional components do not support error boundaries or you cannot create error boundaries using functional
+6:50
+components now in all other cases you're going to use react server component if
+6:55
+you need to fetch data you can fetch your data or co-locate your data fetching with your server component on
+7:01
+the server side anytime you need to access any backend service or sensitive information like tokens and environment
+7:07
+variables you're going to use server components especially if you want to keep your large dependencies on the
+7:13
+server instead of sending that JavaScript bundle to the client you're going to use or default to using react
+7:20
+server components now let's talk about a couple of common patterns when you want to compose your client components and
+7:27
+server components together to create your application now the first one is to move your client components
+Moving client components to the leaves
+7:34
+as further down as you can to the leaves of your component tree
+7:40
+so therefore next.js can optimize the performance of your application by
+7:46
+rendering as much as possible on the server for example in this example that we had over here up top
+7:53
+as you can see we have this search bar which needs to be a client component it needs client interactivity instead of
+8:00
+turning this whole navbar or the whole layout into a client component just
+8:05
+because this search bar needs interactivity you can abstract the
+8:10
+interactivity logic of the search bar into its own client component and still bring that in or import it inside of
+8:18
+your layout which is a server component so you're going to take that or bring that inside of a server component which
+8:24
+is going to allow next to us to render your layout on the server and just plug in this search bar or client component
+8:33
+to this whole server component now when composing server and client
+8:38
+components together behind the scene react is going to render all your server components on the
+8:44
+server it's going to then send the results of your server components to the client
+8:50
+now during this stage if it encounters any client component is going to skip
+8:56
+rendering it and it's going to create a little hole or a little slot for this client component once the result is sent
+9:04
+to the client side these client components are going to be rendered and they're going to just be filled into
+9:10
+this slot that was coming from the server merging the result of your server render
+9:17
+and client render together now it will be the same if you're nesting a server component inside of a client component
+9:23
+so your server component is going to be rendered on the server the result is sent to the client once the client is
+9:30
+rendered it's going to then this result of your server component is going to just be plugged into where it needs to
+9:38
+be plugged in and we know already that server components can only be passed in as children to client components so your
+9:45
+client component is not even aware of what it is that is going to be rendered inside of its children it only knows
+9:52
+where exactly these children is supposed to be rendered but once it actually gets rendered on
+9:58
+the client side it just plugs in whatever that came from the server which is the result of your server component
+10:04
+and it's going to plug it inside that specific slot that was left for your server component
+10:10
+now as I mentioned already if you wanted to Nest a server component inside a client component you have to pass it as
+10:17
+a children you cannot import a server component in a client component doing so
+10:24
+will turn that server component into client component and if your server component is an async function it's
+Nesting a server component in a client component
+10:30
+going to throw an error so let me show you an example from the documentation here so imagine that we have this
+10:37
+example client component that uses this used client directive up top and it's
+10:42
+importing a an example server component inside and this won't work because you
+10:48
+cannot import a server component inside of a client component instead you have
+10:54
+to pass your server component as a children to your clone component so you're going to refactor your client
+10:59
+component to accept a children you're going to have a slot open for any children that's going to be plugged in
+11:05
+here now this happens to be a server component it can be also a client component so this client component is
+11:11
+not even aware of what it is that is going to be rendered here it just has a slot open for a children and then inside
+11:18
+of a parent server component for example inside of your page you're going to bring in your example client component
+11:25
+and then you're going to pass your server component as a children to your
+11:30
+client component this is exactly the way or the pattern that we're going to actually use to use react context or to
+11:38
+share a global context inside of the app router or within the root layout because
+11:44
+react context uses react Hooks and react hooks can only be used in client
+11:49
+components so we're going to have a context provider just similar to this as a client component and we're going to
+11:56
+plug in the rest of our application pages and layouts as server components inside of this context provider so we
+12:03
+can share that context throughout our client-side components we're going to see this in action later on where we
+12:09
+jump to the code and add a theme provider to our application to enable dark and light themes using the next
+12:16
+theme library now next thing to keep in mind working with client and server
+Passing props to client components
+12:22
+components is whenever you're passing props from a server component to client components that prop or the value needs
+12:29
+to be serializable it needs to be able to be converted to a string because you're crossing the boundary from the
+12:36
+server to the client it has to travel over the network it needs to be converted to a string so things like
+12:42
+functions and date can't be passed in directly that's something to just keep
+12:47
+in mind if you're fetching data on the server side and passing data around in your server component they don't need to
+12:54
+be serialized but anytime that you're passing it to a client component or crossing the boundary from the server to
+Avoid poisoning
+13:00
+the client they need to be spherilized now to keep your server only codes out
+13:06
+of your client component and your writing functions and modules that are only meant to run on the server to
+13:11
+prevent them from leaking or be called or be imported into client components you can use the server-only package from
+13:19
+the react team to Mark a file or a module as server-only code and anytime
+13:25
+any function is imported from that file to a client-side component it's going to
+13:30
+throw a build error let me show you the example here in the documentation so as
+13:35
+you can see here we've installed the server only package this is from react and then you import This Server only
+13:42
+package up top of a file for example here inside of our lib we have this data.js we are writing functions that
+13:49
+may be fetch data connector database or CMS and whatnot and This Server only is
+13:55
+going to mark this entire module as a server only module and if you import this get data function or anything from
+14:03
+this module built inside of a client component it is going to throw you an error now the other pattern that I want
+14:09
+to talk about is using third-party packages these packages can be UI libraries can be theme providers or
+Using 3rd party packages
+14:16
+authentication providers they often depend on react Hooks and react context
+14:21
+to share that state or concern throughout your application and because this react server component
+14:28
+and the app router is something new most of these third-party packages don't support react server components or they
+14:35
+do not have this use client directive and you cannot use them inside your react server component you can still use
+14:43
+them inside your own client components that have that use directive up top and
+14:48
+that supports any react Hooks and functionality but you cannot use them directly inside your react server
+14:54
+component so the workaround is to wrap those specific packages components
+15:00
+coming from these libraries inside of your own client component so therefore
+15:05
+they can have access to react hooks context and States and what not to work for example if you're importing a
+15:13
+carousel an image gallery or an image Carousel from a third-party UI library that doesn't
+15:21
+yet support the app router or this use client directive you can import it inside of your own client component that
+15:28
+uses this use client up top and Export that component from your own client component so therefore you can use it
+15:35
+directly inside of a server component for example a page component living inside of the app in this example now as
+15:42
+I mentioned already some of these packages depend on a global react context provider to share this
+15:49
+functionality throughout your application and we're going to implement this together inside of our project by
+15:56
+adding a theme provider which is a global theme provider in the root layout of our application later on but before
+16:03
+we get there let me just finish two things that I want to mention here we talked about passing props from server
+Sharing data between server components
+16:10
+components to client components uh but when you want to share data between server components how would you go about
+16:16
+doing them would you pass props from server components to server components uh or not now in server components there
+16:23
+is no need to pass props between components back and forth for two reasons the first reason is that if
+16:30
+you're fetching data for example inside your layout and you think okay I fetch this data in the layout let me just pass
+16:35
+this data to my page component now there's no need to do that you can co-locate your data fetching with the
+16:42
+component that actually needs it because next.js behind the scene is going to deduplicate your requests so any
+16:48
+component can fetch data as it requires without worrying about duplicate
+16:54
+requests because nextjoice is going to use the fetch cache if there is a similar request between a layout or a
+17:01
+page so it's not going to call or fetch twice it's going to use that same thing so there's no reason to pass this data
+17:08
+as props and for every other thing like logic and functionality you can use the
+17:14
+native JavaScript modules for sharing these Logics between server components for example if you need to create a
+17:21
+connection to your database you can use the Singleton pattern natively in
+17:27
+JavaScript modules to create a connection to your database and then share it between any other react server
+17:33
+component or module that needs to connect your database and needs to use this connection so to summarize to share
+17:41
+data or functionality and logic in your server components we're going to use native JavaScript modules and patterns
+17:48
+like Singleton pattern or for Fetch and data requests we're going to co-locate
+17:54
+the data fetching with the component that actually requires that data without worrying about actually sending multiple
+18:01
+requests because nextges is going to use the cache and it's going to avoid sending multiple requests
+18:07
+now let's jump into the code and see how we can use react context inside the app
+Project
+18:12
+router to share a global theme inside of your whole application okay let's go ahead and apply what we
+18:20
+just learned about composing react server components and client components by creating a dark theme for our project
+18:27
+here I'm going to use the next themes package for this matter so let's just go ahead
+18:33
+and add the next themes package I'm going to open up the terminal stop
+18:39
+the dev server and I'm going to run pmpm add next themes let's now restart the
+18:46
+dev server so the way next themes package works is that we have to wrap
+18:51
+our entire application with this theme provider that we get out of this next
+18:57
+themes package so let's just go ahead and try to import this inside of our root layout
+19:05
+where we are actually rendering the root layout of our application so I'm going
+19:10
+to import this over here and then I'm going to try to wrap my
+19:16
+application with this theme provider we just import it from the package so let me just cut this off go down the footer
+19:24
+and actually render this let's go back to our application and see what's going on here now as you can see this doesn't
+19:30
+work because as I mentioned most of these third-party packages rely on react
+19:35
+context to share functionality throughout your application and react context or any other react hook for that
+19:43
+matter is not supported inside your react server component and a root layout is a react server component as you can
+19:50
+see on the error here too it says create context only works in client components which root layout is not a client
+19:57
+component it says add a used client interactive at the top of the file to use it now we know root layout cannot be
+20:04
+a client component if this was any other layout besides the root layout we could
+20:10
+have just added a use client up top of this file but we also learned about another pattern and that is to move our
+20:18
+client components as farther as possible or deeper as possible inside or down in
+20:24
+the tree of R components rather than turning the whole layout into a client
+20:30
+component if you're going to abstract the logic that we want into a client component and the nest decline component
+20:35
+is still inside of a server component so we're going to do something similar over here we're going to create a file called
+20:42
+providers this is going to allow us to share any context that we need so we're going to
+20:48
+export a function from here that called providers up top I'm going to say that
+20:54
+this is a client component so use client so therefore I can actually use react
+21:01
+context and instead of importing this theme provider there I'm going to import it here now this provider it's a client
+21:08
+component and it does accept a children I'm going to remove this theme Provider from my root layout and I'm going to
+21:15
+actually bring this over here and I'm going to actually bring it right over
+21:20
+here and inside of here I'm just going to render my children so what are we
+21:25
+doing here let's just review together I am creating a provider's component which
+21:31
+is a client component therefore I can use this third-party theme provider that
+21:36
+depends on react context inside of it and I'm wrapping my children inside of it now the pattern we just learned about
+21:43
+nesting server components inside client components is actually what we're doing here so this theme provider that comes
+21:50
+from this package is a client component and we are nesting or passing children
+21:56
+to this theme provider or to this client component now these children are going to be our layouts or pages that can also
+22:03
+be server components so that's the only way you can actually Nest server components inside client components we
+22:10
+learned that we cannot import server components into client components and if we do they just turn into client components once we pass that boundary
+22:17
+between server and client but the only way we could do is to just pass them as children and that's what we're doing
+22:23
+here so going back to our layout now what we can do here is to bring in our own client component that we just
+22:29
+created called providers and then we're going to wrap our layouts with this custom client
+22:36
+component we created now our application should go back to how it was working
+22:42
+with the difference that now we have access to this theme provider now the way this next themes package
+22:49
+works is that it's going to set a data theme attribute on our HTML tag which we
+22:55
+can read and style our components differently using CSS now for styling we
+23:00
+are using Telvin CSS so let's go to Tel Link and see how we can support dark
+23:05
+themes inside Telvin now as you can see here Tailwind actually includes a dark variant by default so out of the box
+23:13
+what you can do is to prefix your classes with this dark variant and then
+23:18
+if it detects a dark theme it's going to apply these classes now the way that
+23:24
+it's going to understand if it needs to apply the Dark theme or not is by
+23:29
+reading a class attribute on a parent element so first we need to set a dark
+23:36
+mode class inside of our Telvin config.js so let's go ahead to tell when config.js
+23:42
+and create this dark mode to actually reflect on the class and the way that it
+23:48
+works is that now inside your HTML embody tag for example we have a div
+23:53
+that has a background of white and a dark variant of background or black now right now there is no Dark theme
+24:00
+applied so it's just going to read the background of white now if you pass in a class of dark to a parent to this div or
+24:09
+if we want to apply it in the whole application we'll pass it to our HTML tag and a class of dark now it's going to
+24:16
+tell me it's going to read into this class and then apply this dark variant now inside of next theme we can actually
+24:23
+change so that instead of setting a data theme attribute it actually sets a class
+24:28
+on the HTML if you scroll down to the API section to the theme provider you
+24:34
+can see this attribute prop that you can pass into the theme provider
+24:39
+defaults to data theme but we can actually set it to class so let's actually go back to our providers and
+24:46
+pass in an attribute here and say hey instead of data theme we want to set a class on our HTML tag let's go back to
+24:53
+our application and see if this is happening let me make this a bit bigger let me just refresh the page and as you
+24:59
+can see there is a class of light set on our HTML tag right now we are in the
+25:05
+light mode or the light theme so there is this class and this style set on our
+25:10
+HTML tag now that everything is set up how do we actually go about changing this theme so the next theme package
+25:17
+actually also exposes a hook called use theme this is going to give you the
+25:23
+resolved theme as well as a set theme function that you can use to toggle
+25:29
+between different themes now the use theme is a custom hook that uses react
+25:35
+hooks under the hood so we need to implement this in a client component so where would we implement this let's
+25:42
+actually go back to our layout and we have this header component which
+25:47
+is responsible for rendering that header up top so maybe we want to create a button right up top there that allows
+25:54
+the user to toggle their theme so let's go inside of our header this is still a react server component and let's say the
+26:02
+idea is that we want to create a theme button over here so I'm going to say
+26:07
+theme button let's just go ahead and create this inside of our components maybe down in the UI I'm going to create
+26:15
+an EU theme button component we're going to export
+26:20
+a react component from here that also include the use client directive up top so that we can
+26:28
+actually use the use theme Hook from the next theme package so what we're going
+26:33
+to do inside here we're going to get some stuff from this use theme hook
+26:40
+and primarily what we're looking for is what the resolve theme is so what the
+26:45
+current theme is and then the set theme function inside of here let's just render a
+26:52
+button for now and inside of this button I'm going to look at this result theme
+26:58
+and I'm going to say if this include if this equals dark let's just render the text light and in
+27:06
+all other cases just render the text dark so for now you're not doing anything we just want to render the text
+27:12
+light or dark depending on our resolved theme let's just go back inside of our
+27:18
+header and try to import this component we create together so let's just save this up let's actually also turn this
+27:25
+container into a flexbox I'm going to say item Center and then let's say
+27:31
+justify between to put that dark button now if I click on this nothing is going
+27:37
+to happen because we haven't hooked this button up so I'm going to add an on click method to this and then once this
+27:45
+is clicked I'm going to call this set theme function and I'm going to say if again the
+27:51
+resolve theme equals dark I'm going to pass in light and if not I'm going to
+27:57
+set the theme to dark let's now test this together now if I click on this button it should turn our application to
+28:03
+a dark theme we have to change our header so that it reflects this but you can see we're toggling the theme using
+28:10
+this use theme hook inside of this button now if I go back to my header and
+28:15
+actually remove this background of gravy sets earlier so it toggles with our Dark theme you
+28:21
+can see we have our header now actually also toggling with this theme instead of
+28:27
+having a set background now as you may have already noticed when I'm toggling this theme the next theme
+28:35
+package is actually toggling the value of our class attribute on the HTML so when we turn it to dark it is actually
+28:42
+setting it to dark which is then picked up by telvind to apply the dark variant now let's actually make this button look
+28:49
+a bit nicer than just saying the text there for this I'm going to use hero icons package so let me stop the dev
+28:55
+server and I'm going to install as a Dev dependency these hero icons let me just
+29:00
+actually also show the website here now this is a free SVG icon library from
+29:06
+detailing team and we're going to actually use this here inside of our application so let me just restart the
+29:13
+dev server going back to our button let me just copy this little code snippet I
+29:19
+have written before and let's explain what we're doing here again I've just added some classes over
+29:25
+here on click we're still setting the theme based on what the current resolve theme is and then instead of just
+29:31
+rendering text we are rendering these icons the Sun and Moon icon here and we're just also import these icons from
+29:37
+the hero icons package and now if I go back to the application and refresh you should be able to see a little nice
+29:43
+button there that allows us to change the theme now if you can see hardly that
+29:49
+little icon the moon icon showed up there but this is not actually quite working correctly because we are in the
+29:57
+dark theme right now and if we are on the Dark theme we are supposed to show the song icon now the reason for this is
+30:03
+that nexj is actually pre-renders client components on the server and there's no way for us to know what the theme is on
+30:10
+the server therefore this use theme hook actually fails to read the correct theme
+30:16
+and messes up this theme over here so therefore we should not render this theme button unless we are mounted on
+30:24
+the client side now you might think well this is a client component and react
+30:29
+renders client components on the client side but again next.js take this a bit
+30:34
+further and pre-renders our client components on the server for a faster experience and then hydrates that HTML
+30:41
+with react on the client side therefore it also runs this client component on the server and that's why there is a
+30:47
+mismatch of the resolved theme over here so to make sure that we are only rendering this theme button if we are on
+30:53
+the client side we're going to use State and let's create a mounted and set
+30:59
+mounted let's just initiate this with false I'm going to also use use effect from react and we're going to use this
+31:07
+to set the mounted to true and we're going to also only run this one time and
+31:13
+down here I'm going to say if I'm not mounted I actually don't want to render this theme button I'm just going to
+31:20
+render all let's actually also get the user State okay now if I refresh our application choose show up correctly now
+31:26
+that I'm in the dark theme the actual Sun button which is on the dark this sun icon is going to show up to say hey turn
+31:34
+to uh light mode and then turn to dark mode now this is something to keep in mind it is next GSS specific because it
+31:41
+tries to pre-render our client components on the server for a better performance and hydrates them on the
+31:47
+client side you have to make sure that you're only rendering this theme button if you're actually mounted on the client
+31:54
+side which you can do with the use of this user State and use effect to make sure that it is actually reading the
+31:59
+correct result theme because when this renders on the server side there is no way of it reading the theme so that's
+32:06
+where the mismatch comes from now furthermore if you actually check your console you should see this warning
+32:12
+about extra attributes from the server and the reason is when this root layout
+32:18
+ran on the server there was no attributes set on our HTML tag but when
+32:24
+it ended up on the client side it actually had this class as you can see down here and style tag added to the
+32:31
+HTML so the HTML that was rendered on the server is different with the HTML
+32:37
+that's now on the client side because next theme actually went ahead and added these attributes to our HTML tag so that
+32:45
+we can toggle the theme now to solve this you can pass in this attribute that says suppress hydration warning now this
+32:52
+is going to actually get rid of that warning as you can see over here if you go back to the next themes package you
+32:59
+can see they are also recommending to use this attribute on the HTML now sometimes you cannot really match the
+33:06
+attributes that you get from the server and on the client in this specific case there was no way for us to know the
+33:12
+theme on the server so that we can set the correct attributes on our HTML tag and if you actually also read the react
+33:19
+documentation they explain that you can use this attribute anytime that's kind
+33:25
+of impossible to match the htmls on the server and the client but they also recommend not to go ahead and you
+33:31
+overuse it unless there is a specific reason why we cannot match the attributes from the server and the
+33:37
+client that's a wrap for this video folks if you talked about react server component client component when to use which and
+Outro
+33:44
+how we can actually compose them together we also looked at using react context inside react server components
+33:50
+by implementing this theme using the next theme package if you have any questions hit me up in the comments if
+33:57
+you're interested in learning next JS this was an example lesson from my course there is a link in the
+34:02
+description you can check it out let me know if you have any questions and I will see in the next one bye
+
