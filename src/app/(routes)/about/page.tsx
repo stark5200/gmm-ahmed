@@ -13,7 +13,7 @@ const page = () => {
 
             
             
-            <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div className="w-full px-4 lg:w-1/2 xl:w-5/12 flex">
               <div className="mt-10 lg:mt-0">
                 <h2 className="mb-8 mt-10 lg:ml-5 text-4xl font-bold text-emerald-600 sm:text-5xl lg:text-left">
                   About Us
@@ -31,17 +31,11 @@ const page = () => {
 
                   Guests sleep in comfortable capsules equipped with finest cotton sheets and use modern, spacious bathrooms. A vast array of bustling cafés, bars, nightclubs and restaurants are on your doorstep. Just step outside and you are a few metres from the river and Zurich’s famous Grossmünster. The city awaits you <br /> <br />
                 </p>
-                <a
-                  href="/#"
-                  className="inline-flex items-center justify-center px-10 py-4 text-base font-normal text-center text-emerald-600 rounded-lg bg-emerald-50 hover:bg-opacity-90 lg:px-8 xl:px-10"
-                >
-                  Book Now
-                </a>
               </div>
             </div>
-            
+            <div className="flex">
             <Picsdots />
-            
+            </div>  
           </div>
         </div>
       </section>
