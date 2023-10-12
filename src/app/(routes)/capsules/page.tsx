@@ -55,3 +55,15 @@ As the hotel is surrounded by bars, restaurants and cafés there are none in the
 
 export default page
 
+/*
+ other way to play youtube video
+ 
+import bootstrap
+import { Container } from 'react-bootstrap'
+
+<Container>
+  <div className="ratio ratio-16x9">
+    <iframe src='https://www.youtube.com/watch?v=IUskDZXw_sw&t=15s&ab_channel=GreenMarmotCapsuleHotel' title='gmm youtube video' allowFullScreen></iframe> 
+
+*/
+
