@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import Image from 'next/image'
 import CustomImage from '@/components/CustomImage'
 import Carousels from '@/components/Carousels'
+import SwiperComp from '@/components/SwiperComp';
 const VIDEO_PATH = 'https://www.youtube.com/watch?v=IUskDZXw_sw&t=15s&ab_channel=GreenMarmotCapsuleHotel'
 
 const page = () => {
@@ -23,6 +24,10 @@ const page = () => {
 
         <Carousels/>
 
+      <hr className="mx-auto  bg-emerald-600 m-10 h-1.5 rounded opacity-80" />
+
+        <SwiperComp/>
+      
       <hr className="mx-auto  bg-emerald-600 m-10 h-1.5 rounded opacity-80" />
 
       <p className="m-10 pt-10 text-xl font-bold leading-8 text-emerald-600 text-center lg:text-left">

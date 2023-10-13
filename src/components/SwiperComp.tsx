@@ -4,7 +4,7 @@
 import Image from 'next/image'
 
 // core version + navigation, pagination modules:
-import { Swiper, SwiperSlide } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import { images } from "@/lib/images"
