@@ -1,8 +1,11 @@
-import React from 'react'
+import React , { useRef } from 'react'
 import CustomImage from '@/components/CustomImage'
 import Picsdots from '@/components/Picsdots'
+import ReactPlayer from 'react-player'
+const VIDEO_PATH = 'https://www.youtube.com/watch?v=lD5xcE60pK0&ab_channel=TeleZ%C3%BCriOffiziell'
 
 const page = () => {
+  const playerRef = useRef(null);
   return (
     <>
     <section className="pt-10 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-emerald-50">
@@ -38,6 +41,9 @@ const page = () => {
             </div>  
           </div>
         </div>
+        <div className='flex justify-center pb-12 rounded-2xl'>
+        <ReactPlayer ref={playerRef} url={VIDEO_PATH} controls={true} />
+      </div>
       </section>
     </>
   )
