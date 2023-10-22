@@ -1,3 +1,5 @@
+'use client'
+
 import React , { useRef } from 'react'
 import CustomImage from '@/components/CustomImage'
 import Picsdots from '@/components/Picsdots'
