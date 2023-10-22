@@ -11,10 +11,10 @@ const page = () => {
         <hr className="mx-auto  bg-emerald-600 m-10 h-1.5 rounded opacity-80" />
 
         <div className="flex justify-center pb-12">
-          <iframe width="100%" height="600" title="360 View" src="https://tour-de.metareal.com/apps/player?asset=bb783986-966e-4695-94e9-3d2cef2cec85&starting=tour&autostart=false" frameborder="0" allow="xr-spatial-tracking *; accelerometer *; magnetometer *; gyroscope *" allowvr="yes" allowFullscreen="yes"></iframe>
+          <iframe width="100%" height="600" title="360 View" src="https://tour-de.metareal.com/apps/player?asset=bb783986-966e-4695-94e9-3d2cef2cec85&starting=tour&autostart=false" frameBorder="0" allow="xr-spatial-tracking *; accelerometer *; magnetometer *; gyroscope *" allowFullScreen={true} ></iframe>
 
         </div>
-
+        {/* allowvr="yes", frame{border/Border} deprecated or something  */}
       </div>
     </section>
   )
