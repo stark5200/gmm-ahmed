@@ -38,12 +38,12 @@ const page = () => {
                 </p>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex justify-center p-12 width-full">
             <Picsdots />
             </div>  
           </div>
         </div>
-        <div className='flex justify-center pb-12 rounded-2xl'>
+        <div className='flex justify-center p-12 rounded-2xl'>
         <ReactPlayer ref={playerRef} url={VIDEO_PATH} controls={true} />
       </div>
       </section>

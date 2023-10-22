@@ -5,8 +5,8 @@ import CustomImage from "./CustomImage"
 
 const Picsdots = () => {
   return (
-    <div className="w-full px-4 lg:w-6/12">
-              <div className="flex items-center p-6 -mx-3 sm:-mx-4">
+    <div className="w-full">
+              <div className="flex items-center">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
                     <CustomImage source={"https://greenmarmot.com/images/capsules/62_Kapselhotel.jpg"}/>
