@@ -22,7 +22,7 @@ function Footer() {
         </div>
         <div className="text-emerald-600 text-left align-left">
           <a href={`tel: +41 44 500 76 80`}>Tel +41 44 500 76 80</a>
-          <p>info@greenmarmot.com</p>
+          <p>info@greenmarmot.com</p> {/* or zurich@greenmarmot.com */}
           <a href='/impressum'> Impressum </a>
           <a href={"../public/AGB_GreenMarmotGmbH.pdf"}></a>
         </div>
