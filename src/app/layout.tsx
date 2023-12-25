@@ -2,7 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/footer'
-import { Router } from 'react-router-dom' //not sure if this is necessary
+import { Router } from 'react-router-dom' 
 
 
 const inter = Inter({ subsets: ['latin'] })
