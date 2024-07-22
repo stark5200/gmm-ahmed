@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Hero = () => {
   return (
 
-<div className="hero min-h-screen custom-img" >
+<div className="hero min-h-screen CustomImage" >
 
   <div className="hero-overlay bg-opacity-70"></div>
 
@@ -17,7 +17,7 @@ const Hero = () => {
         We are delighted to have you as our guest and are committed to providing you with a comfortable and memorable stay.
       </p>
       <Link href="https://hotels.cloudbeds.com/reservation/phlLjw">
-        <button className="btn bg-emerald-600 font-sans hover:bg-emerald-500 text-stone-200">Book Now</button>
+        <button className="btn btn-success hover:bg-accent font-verdana">Book Now</button>
       </Link>
     </div>
   </div>

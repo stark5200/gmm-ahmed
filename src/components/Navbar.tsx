@@ -5,9 +5,11 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import {  } from 'react-router';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import Home from '@/app/page';
 import { useNavigate } from 'react-router-dom';
+import Logo from 'public/corporateDesign/logo_cdmanualgreenmarmot/Green_Marmot-LOGO/Green-Marmot_LOGO_Bild-Wort/PNG (web)/1C/72dpi (web)/schwarz/LOGO_Green_Marmot-RZ-1C_sw_72.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -26,7 +28,7 @@ const Navbar = () => {
         setTextColor('#059669');
       } else {
         setColor('transparent');
-        setTextColor('#059669');
+        setTextColor('#fafaf9');
       }
     };
     
@@ -41,10 +43,10 @@ const Navbar = () => {
       className='fixed left-0 top-0 w-full z-20 ease-in duration-200'
     >
       <div className='max-w-[1240px] m-auto flex justify-between items-center p-3 text-white'>
-        <Link href='/'>
-          <h1  style={{ color: `${textColor}` }} className='text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-accent'>
-            GREEN MARMOT
-          </h1>
+      <Link href='/'>
+          <button className='flex items-center'>
+            <Image src={Logo} alt='Green Marmot logo' width={80} height={80} />
+          </button>
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
           <li> 
@@ -103,16 +105,16 @@ const Navbar = () => {
               <Link href='/capsules' as='capsules'>CAPSULES</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/about' as='capsules'>ABOUT US</Link>
+              <Link href='/about' as='about'>ABOUT US</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/contact' as='capsules'>CONTACT</Link>
+              <Link href='/contact' as='contact'>CONTACT</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/location' as='capsules'>LOCATION</Link>
+              <Link href='/location' as='location'>LOCATION</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 font-verdana'>
-              <Link href='/threesixty' as='capsules'>360 View</Link>
+              <Link href='/threesixty' as='threesixty'>360 View</Link>
             </li>
           </ul>
         </div>
