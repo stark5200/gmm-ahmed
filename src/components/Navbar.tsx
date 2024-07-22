@@ -51,32 +51,32 @@ const Navbar = () => {
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex'>
           <li> 
             <Link href='/'>
-              <button className='btn btn-ghost p-4 font-verdana' >HOME</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >HOME</button>
             </Link>
           </li>
           <li>
             <Link href='/capsules'>
-              <button className='btn btn-ghost p-4 font-verdana' >CAPSULES</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >CAPSULES</button>
             </Link>
           </li>
           <li>
             <Link href='/about'>
-              <button className='btn btn-ghost p-4 font-verdana' >ABOUT US</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >ABOUT US</button>
             </Link>
           </li>
           <li>
             <Link href='/contact'>
-              <button className='btn btn-ghost p-4 font-verdana' >CONTACT</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >CONTACT</button>
             </Link>
           </li>
           <li>
             <Link href='/location'>
-              <button className='btn btn-ghost p-4 font-verdana' >LOCATION</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >LOCATION</button>
             </Link>
           </li>
           <li>
             <Link href='/threesixty'>
-              <button className='btn btn-ghost p-4 font-verdana' >360 VIEW</button>
+              <button className='btn btn-ghost p-4 font-verdana drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]' >360 VIEW</button>
             </Link>
           </li>
         </ul>
